@@ -1,0 +1,22 @@
+<div *ngFor = 'let req of userRequests'>
+    <mat-card>
+        <mat-card-content>
+            <b>Ime</b>: {{req.name}} <br/>
+            <b>Prezime</b>: {{req.surname}} <br/>
+            <b>Korisničko ime</b>: {{req.username}} <br/>
+            <b>Email</b>: {{req.email}} <br/>
+            <b>Naziv preduzeca</b>: {{req.firmName}} <br/>
+            <b>Br. telefona</b>: {{req.phoneNumber}} <br/>
+            <b>Maticni broj</b>: {{req.id}} <br/>
+            <b>PIB</b>: {{req.pib}} <br/>
+            <b>Drzava</b>: {{req.country}} <br/>
+            <b>Grad</b>: {{req.city}} <br/>
+            <b>Postanski broj</b>: {{req.zipCode}} <br/>
+            <b>Ulica i broj</b>: {{req.streetAndNumber}}
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click) = 'updateStatus("accepted", req.username)'>Prihvati</button>
+            <button mat-raised-button color='accent' (click) = 'updateStatus("rejected", req.username)'>Odbij</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

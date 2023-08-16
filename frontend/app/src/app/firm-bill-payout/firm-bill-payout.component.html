@@ -1,0 +1,147 @@
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>Naziv proizvoda</th>
+                <th>Proizvodjac</th>
+                <th>Prodajna cena</th>
+                <th>Porez</th>
+                <th>Kolicina</th>
+            </tr>
+            <tr *ngFor = 'let billItem of billItems'>
+                <td>
+                    {{billItem.product.name}}
+                </td>
+                <td>
+                    {{billItem.product.producer}}
+                </td>
+                <td>
+                    {{billItem.sellingPrice}}
+                </td>
+                <td>
+                    {{billItem.product.tax}}%
+                </td>
+                <td>
+                    {{billItem.amount}}/{{billItem.product.unitOfMeasure}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Ukupno za placanje: <strong>{{toPay}}</strong></td>
+                <td colspan="3">Od toga porez: <strong>{{inTaxes}}</strong></td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Odaberite nacin placanja</mat-label>
+                        <mat-select>
+                            <mat-option value= "gotovina" (click) = 'choosePayingMethod("gotovina")'>Gotovina</mat-option>
+                            <mat-option value= "kartica" (click) = 'choosePayingMethod("kartica")'>Kartica</mat-option>
+                            <mat-option value= "cek" (click) = 'choosePayingMethod("cek")'>Cek</mat-option>
+                            <mat-option value= "virman" (click) = 'choosePayingMethod("virman")'>Virman</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <div *ngIf = 'payingMethod == "gotovina"'>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Novac</mat-label>
+                            <input name = 'cashInput' matInput required [(ngModel)] = 'money' (input) = 'onMoneyChange()'>
+                            <mat-error *ngIf = 'money == null'>Novac je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Broj licne karte</mat-label>
+                            <input name = 'indentifierNumberInput' matInput [(ngModel)] = 'identifierNumber'>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Kusur: {{change}}
+                    </td>
+                    <td>
+                        <button mat-raised-button color="accent" (click) = 'addBill("gotovina")'>Dodaj racun</button>
+                    </td>
+                </tr>
+            </div>
+            <div *ngIf = 'payingMethod == "kartica"'>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Broj licne karte</mat-label>
+                            <input name = 'indentifierNumberInput' matInput required [(ngModel)] = 'identifierNumber'>
+                            <mat-error *ngIf = 'identifierNumber == ""'>Broj licne karte je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Broj slip racuna</mat-label>
+                            <input name = 'slipNumberInput' matInput required [(ngModel)] = 'slipNumber'>
+                            <mat-error *ngIf = 'slipNumber == ""'>Broj slip racuna je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button mat-raised-button color="accent" (click) = 'addBill("kartica")'>Dodaj racun</button>
+                    </td>
+                </tr>
+            </div>
+            <div *ngIf = 'payingMethod == "cek"'>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Ime kupca</mat-label>
+                            <input name = 'buyerNameInput' matInput required [(ngModel)] = 'buyerName'>
+                            <mat-error *ngIf = 'buyerName == ""'>Ime je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Prezime kupca</mat-label>
+                            <input name = 'buyerSurnameInput' matInput required [(ngModel)] = 'buyerSurname'>
+                            <mat-error *ngIf = 'buyerSurname == ""'>Prezime je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Broj licne karte</mat-label>
+                            <input name = 'indentifierNumberInput' matInput required [(ngModel)] = 'identifierNumber'>
+                            <mat-error *ngIf = 'identifierNumber == ""'>Broj licne karte je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <button mat-raised-button color = 'accent' (click) = 'addBill("cek")'>Dodaj racun</button>
+                    </td>
+                </tr>
+            </div>
+            <div *ngIf = 'payingMethod == "virman"'>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Narucioci</mat-label>
+                            <mat-select>
+                                <div *ngFor = 'let p of purchasers'>
+                                    <mat-option (click) = 'setPurchaser(p)' value={{p}}>Naziv: {{p.firmName}}, PIB: {{p.pib}}</mat-option>
+                                </div>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <button mat-raised-button color = 'accent' (click) = 'addBill("virman")'>Dodaj racun</button>
+                    </td>
+                </tr>
+
+            </div>
+        </table>
+    </form>
+</body>

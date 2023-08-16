@@ -1,0 +1,409 @@
+[{
+  "_id": {
+    "$oid": "62d0242650a3e22f344edc1d"
+  },
+  "objects": [
+    {
+      "stockroomName": "Magacin 1",
+      "buyingPrice": "100",
+      "sellingPrice": "140",
+      "inStock": 190,
+      "minWantedAmount": "100",
+      "maxWantedAmount": "10000",
+      "isStockroom": true
+    },
+    {
+      "city": "Beograd",
+      "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+      "buyingPrice": "100",
+      "sellingPrice": "150",
+      "inStock": "140",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "1000",
+      "isStockroom": false
+    }
+  ],
+  "username": "prodavnica",
+  "code": "1",
+  "name": "a1",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "Proizvodjac A1",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d024a550a3e22f344edc1e"
+  },
+  "objects": [
+    {
+      "stockroomName": "Magacin 1",
+      "buyingPrice": "80",
+      "sellingPrice": "120",
+      "inStock": "200",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "1000",
+      "isStockroom": true
+    },
+    {
+      "city": "Beograd",
+      "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+      "buyingPrice": "80",
+      "sellingPrice": "120",
+      "inStock": "200",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "500",
+      "isStockroom": false
+    }
+  ],
+  "username": "prodavnica",
+  "code": "2",
+  "name": "banana",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "Dzamajka",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "Derbi",
+  "customTariff": 10,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 100,
+  "maxWantedAmount": 10000,
+  "description": "Lepe banane.",
+  "declaration": "Deklaracija",
+  "hasImg": true,
+  "__v": 0,
+  "category": "Hrana/Voce"
+},{
+  "_id": {
+    "$oid": "62d024f150a3e22f344edc1f"
+  },
+  "objects": [
+    {
+      "city": "Beograd",
+      "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+      "buyingPrice": "200",
+      "sellingPrice": "250",
+      "inStock": "200",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "400",
+      "isStockroom": false
+    }
+  ],
+  "username": "prodavnica",
+  "code": "3",
+  "name": "a3",
+  "unitOfMeasure": "l",
+  "tax": 10,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0,
+  "category": "Opste/"
+},{
+  "_id": {
+    "$oid": "62d0251550a3e22f344edc20"
+  },
+  "objects": [],
+  "username": "prodavnica",
+  "code": "4",
+  "name": "a4",
+  "unitOfMeasure": "g",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0,
+  "category": "Opste/"
+},{
+  "_id": {
+    "$oid": "62d0253050a3e22f344edc21"
+  },
+  "objects": [
+    {
+      "stockroomName": "Magacin 1",
+      "buyingPrice": "400",
+      "sellingPrice": "600",
+      "inStock": "400",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "500",
+      "isStockroom": true
+    }
+  ],
+  "username": "prodavnica",
+  "code": "5",
+  "name": "a5",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "Proizvodjac A5",
+  "customTariff": 0,
+  "ecoTax": true,
+  "akciza": true,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d0255b50a3e22f344edc22"
+  },
+  "objects": [],
+  "username": "prodavnica",
+  "code": "6",
+  "name": "a6",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d025ab50a3e22f344edc23"
+  },
+  "objects": [
+    {
+      "stockroomName": "Magacin 1",
+      "buyingPrice": "50",
+      "sellingPrice": "150",
+      "inStock": 1485,
+      "minWantedAmount": "200",
+      "maxWantedAmount": "2000",
+      "isStockroom": true
+    }
+  ],
+  "username": "prodavnica",
+  "code": "7",
+  "name": "Cigla",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "Srbija",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "Kvalitetna cigla.",
+  "declaration": "",
+  "hasImg": true,
+  "__v": 0,
+  "category": "Hrana/Voce"
+},{
+  "_id": {
+    "$oid": "62d0273850a3e22f344edc25"
+  },
+  "username": "prodavnica",
+  "code": "8",
+  "name": "Somot",
+  "unitOfMeasure": "m",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "Tri",
+  "barCode": "",
+  "producer": "Metera",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": true
+},{
+  "_id": {
+    "$oid": "62d0275850a3e22f344edc26"
+  },
+  "objects": [],
+  "username": "prodavnica",
+  "code": "9",
+  "name": "a9",
+  "unitOfMeasure": "kg",
+  "tax": 10,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d0276650a3e22f344edc27"
+  },
+  "objects": [],
+  "username": "prodavnica",
+  "code": "10",
+  "name": "a10",
+  "unitOfMeasure": "kg",
+  "tax": 20,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0,
+  "category": "Opste/Voce"
+},{
+  "_id": {
+    "$oid": "62d027b550a3e22f344edc28"
+  },
+  "objects": [],
+  "username": "prodavnica",
+  "code": "11",
+  "name": "PaginacijaPls",
+  "unitOfMeasure": "kg",
+  "tax": 10,
+  "type": "",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02b7850a3e22f344edc31"
+  },
+  "objects": [
+    {
+      "city": "Uzice",
+      "streetAndNumber": "Ulica 1",
+      "buyingPrice": "60",
+      "sellingPrice": "140",
+      "inStock": "400",
+      "minWantedAmount": "100",
+      "maxWantedAmount": "1000",
+      "isStockroom": false
+    }
+  ],
+  "username": "ugostitelj",
+  "code": "1",
+  "name": "Pivo",
+  "unitOfMeasure": "l",
+  "tax": 20,
+  "type": "drink",
+  "countryOfOrigin": "",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": false,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02bb450a3e22f344edc32"
+  },
+  "objects": [
+    {
+      "city": "Uzice",
+      "streetAndNumber": "Ulica 1",
+      "buyingPrice": "30",
+      "sellingPrice": "100",
+      "inStock": "80",
+      "minWantedAmount": "50",
+      "maxWantedAmount": "200",
+      "isStockroom": false
+    }
+  ],
+  "username": "ugostitelj",
+  "code": "2",
+  "name": "Rakija",
+  "unitOfMeasure": "l",
+  "tax": 20,
+  "type": "drink",
+  "countryOfOrigin": "Srbija",
+  "foreignName": "",
+  "barCode": "",
+  "producer": "",
+  "customTariff": 0,
+  "ecoTax": true,
+  "akciza": false,
+  "minWantedAmount": 0,
+  "maxWantedAmount": 0,
+  "description": "",
+  "declaration": "",
+  "hasImg": false,
+  "__v": 0
+}]

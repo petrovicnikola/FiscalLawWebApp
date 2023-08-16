@@ -1,0 +1,267 @@
+[{
+  "_id": {
+    "$oid": "62b5b510b77c9f0c11a5345b"
+  },
+  "username": "admin",
+  "password": "123"
+},{
+  "_id": {
+    "$oid": "62d022e350a3e22f344edc19"
+  },
+  "codes": [
+    "111",
+    "112"
+  ],
+  "bankAccounts": [
+    {
+      "bankAccountNumber": "123-123456123456-12",
+      "bankName": "Komercijalna",
+      "username": "prodavnica"
+    }
+  ],
+  "cashRegisters": [
+    {
+      "city": "Beograd",
+      "country": "Srbija",
+      "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+      "zipCode": "11000",
+      "cashRegisterType": "114",
+      "username": "prodavnica"
+    }
+  ],
+  "purchasers": [
+    "987654321"
+  ],
+  "rooms": [],
+  "name": "Nikola",
+  "surname": "Petrovic",
+  "username": "prodavnica",
+  "password": "Lozinka123!",
+  "email": "prodavnica@gmail.com",
+  "firmName": "Prodavnica",
+  "phoneNumber": "0661234567",
+  "id": "123",
+  "pib": "123456789",
+  "country": "Srbija",
+  "city": "Beograd",
+  "zipCode": "11000",
+  "streetAndNumber": "Ulica 1",
+  "status": "accepted",
+  "isShop": true,
+  "isBuyer": false,
+  "inPDV": true,
+  "firstLogin": false,
+  "daysToPay": 0,
+  "rabat": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d0233650a3e22f344edc1a"
+  },
+  "codes": [],
+  "bankAccounts": [],
+  "cashRegisters": [],
+  "purchasers": [],
+  "rooms": [],
+  "name": "NekiIme",
+  "surname": "NekoPrezime",
+  "username": "neko",
+  "password": "Lozinka123!",
+  "email": "neko@gmail.com",
+  "firmName": "nekoPreduzece",
+  "phoneNumber": "066123456",
+  "id": "123",
+  "pib": "234567891",
+  "country": "Srbija",
+  "city": "Novi Sad",
+  "zipCode": "21000",
+  "streetAndNumber": "Ulica 2",
+  "status": "pending",
+  "isShop": false,
+  "isBuyer": false,
+  "inPDV": false,
+  "firstLogin": true,
+  "daysToPay": 0,
+  "rabat": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d0238550a3e22f344edc1b"
+  },
+  "codes": [],
+  "bankAccounts": [],
+  "cashRegisters": [],
+  "purchasers": [],
+  "rooms": [],
+  "name": "Kupac",
+  "surname": "Kupcevic",
+  "username": "kupac",
+  "password": "Lozinka123!",
+  "phoneNumber": "0651234567",
+  "isBuyer": true,
+  "status": "accepted",
+  "firstLogin": false,
+  "identifierNumber": "12345",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d029b950a3e22f344edc2d"
+  },
+  "codes": [],
+  "bankAccounts": [],
+  "cashRegisters": [],
+  "purchasers": [],
+  "rooms": [],
+  "name": "",
+  "surname": "",
+  "username": "",
+  "password": "",
+  "email": "narucilac@gmail.com",
+  "firmName": "Narucilac",
+  "phoneNumber": "0611234567",
+  "id": "123456",
+  "pib": "987654321",
+  "country": "Srbija",
+  "city": "Valjevo",
+  "zipCode": "14000",
+  "streetAndNumber": "Ulica 3",
+  "status": "pending",
+  "isShop": false,
+  "isBuyer": false,
+  "inPDV": false,
+  "firstLogin": true,
+  "daysToPay": 10,
+  "rabat": 15,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02b0450a3e22f344edc2e"
+  },
+  "codes": [
+    "114",
+    "115"
+  ],
+  "bankAccounts": [
+    {
+      "bankAccountNumber": "123-123456123457-23",
+      "bankName": "Inteza",
+      "username": "ugostitelj"
+    }
+  ],
+  "cashRegisters": [
+    {
+      "city": "Uzice",
+      "country": "Srbija",
+      "streetAndNumber": "Ulica 1",
+      "zipCode": "31000",
+      "cashRegisterType": "112",
+      "username": "ugostitelj"
+    }
+  ],
+  "purchasers": [],
+  "rooms": [
+    {
+      "name": "Basta",
+      "tables": [
+        {
+          "height": 0,
+          "width": 0,
+          "name": "1",
+          "shape": "circle",
+          "r": 50,
+          "x": 50,
+          "y": 50
+        },
+        {
+          "height": 0,
+          "width": 0,
+          "name": "2",
+          "shape": "circle",
+          "r": 50,
+          "x": 150,
+          "y": 200
+        },
+        {
+          "height": 0,
+          "width": 0,
+          "name": "3",
+          "shape": "circle",
+          "r": 50,
+          "x": 252,
+          "y": 50
+        },
+        {
+          "height": 0,
+          "width": 0,
+          "name": "4",
+          "shape": "circle",
+          "r": 50,
+          "x": 300,
+          "y": 400
+        },
+        {
+          "height": 150,
+          "width": 200,
+          "name": "5",
+          "shape": "rect",
+          "r": 0,
+          "x": 600,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "name": "Soba",
+      "tables": [
+        {
+          "height": 100,
+          "width": 100,
+          "name": "1",
+          "shape": "rect",
+          "r": 0,
+          "x": 400,
+          "y": 400
+        },
+        {
+          "height": 100,
+          "width": 150,
+          "name": "2",
+          "shape": "rect",
+          "r": 0,
+          "x": 200,
+          "y": 0
+        },
+        {
+          "height": 0,
+          "width": 0,
+          "name": "3",
+          "shape": "circle",
+          "r": 50,
+          "x": 350,
+          "y": 350
+        }
+      ]
+    }
+  ],
+  "name": "Ime",
+  "surname": "Prezime",
+  "username": "ugostitelj",
+  "password": "Lozinka123!",
+  "email": "ugostitelj@gmail.com",
+  "firmName": "Ugostiteljska radnja",
+  "phoneNumber": "065123456",
+  "id": "123456",
+  "pib": "123446789",
+  "country": "Srbija",
+  "city": "Uzice",
+  "zipCode": "31000",
+  "streetAndNumber": "Ulica 5",
+  "status": "accepted",
+  "isShop": "0",
+  "isBuyer": false,
+  "inPDV": true,
+  "firstLogin": false,
+  "daysToPay": 0,
+  "rabat": 0,
+  "__v": 0
+}]

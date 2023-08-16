@@ -1,0 +1,51 @@
+<body>
+    <h2 mat-dialog-title>Proizvodi</h2>
+    <mat-dialog-content>
+        <form [formGroup] = 'productSearchForm'>
+            <table>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Proizvodjac</th>
+                </tr>
+                <tr *ngFor = 'let p of products'>
+                    <td>{{p.name}}</td>
+                    <td>{{p.producer}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance='outline' color = 'accent'>
+                            <mat-label>Pretrazi artikal po nazivu</mat-label>
+                            <input matInput formControlName = 'name'>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <button mat-raised-button (click) = 'search()'>Pretrazi</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" *ngIf = 'selectedProduct != null'>
+                        Pronadjen je proizvod: {{selectedProduct.name}} <br/>
+                        Proizvodjac: {{selectedProduct.producer}}
+                    </td>
+                </tr>
+                <tr *ngIf = 'selectedProduct != null'>
+                    <td>Dodaj u kategoriju: {{category}}/{{subcategory}}</td>
+                    <td>
+                        <button mat-raised-button color = 'accent' (click) = add()>
+                            Dodaj
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span class = 'errorClass'>{{error}}</span>
+                        <span class = 'infoClass'>{{info}}</span>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>OK</button>
+      </mat-dialog-actions>
+</body>

@@ -1,0 +1,310 @@
+[{
+  "_id": {
+    "$oid": "62d0294a50a3e22f344edc2b"
+  },
+  "billItems": [
+    {
+      "product": {
+        "objects": [
+          {
+            "stockroomName": "Magacin 1",
+            "buyingPrice": "100",
+            "sellingPrice": "140",
+            "inStock": "200",
+            "minWantedAmount": "100",
+            "maxWantedAmount": "10000",
+            "isStockroom": true
+          },
+          {
+            "city": "Beograd",
+            "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+            "buyingPrice": "100",
+            "sellingPrice": "150",
+            "inStock": "140",
+            "minWantedAmount": "100",
+            "maxWantedAmount": "1000",
+            "isStockroom": false
+          }
+        ],
+        "_id": "62d0242650a3e22f344edc1d",
+        "username": "prodavnica",
+        "code": "1",
+        "name": "a1",
+        "unitOfMeasure": "kg",
+        "tax": 20,
+        "type": "",
+        "countryOfOrigin": "",
+        "foreignName": "",
+        "barCode": "",
+        "producer": "Proizvodjac A1",
+        "customTariff": 0,
+        "ecoTax": false,
+        "akciza": false,
+        "minWantedAmount": 0,
+        "maxWantedAmount": 0,
+        "description": "",
+        "declaration": "",
+        "hasImg": false,
+        "__v": 0
+      },
+      "amount": "10",
+      "sellingPrice": "140"
+    },
+    {
+      "product": {
+        "objects": [
+          {
+            "stockroomName": "Magacin 1",
+            "buyingPrice": "50",
+            "sellingPrice": "150",
+            "inStock": "1500",
+            "minWantedAmount": "200",
+            "maxWantedAmount": "2000",
+            "isStockroom": true
+          }
+        ],
+        "_id": "62d025ab50a3e22f344edc23",
+        "username": "prodavnica",
+        "code": "7",
+        "name": "Cigla",
+        "unitOfMeasure": "kg",
+        "tax": 20,
+        "type": "",
+        "countryOfOrigin": "Srbija",
+        "foreignName": "",
+        "barCode": "",
+        "producer": "",
+        "customTariff": 0,
+        "ecoTax": false,
+        "akciza": false,
+        "minWantedAmount": 0,
+        "maxWantedAmount": 0,
+        "description": "Kvalitetna cigla.",
+        "declaration": "",
+        "hasImg": true,
+        "__v": 0,
+        "category": "Hrana/Voce"
+      },
+      "amount": "15",
+      "sellingPrice": "150"
+    }
+  ],
+  "username": "prodavnica",
+  "money": 4000,
+  "toPay": 3650,
+  "inTaxes": 730,
+  "identifierNumber": "12345",
+  "buyerName": "",
+  "buyerSurname": "",
+  "slipNumber": "",
+  "purchaser": null,
+  "date": {
+    "$date": {
+      "$numberLong": "1657809226075"
+    }
+  },
+  "type": "gotovina",
+  "firmName": "Prodavnica",
+  "objectName": "Magacin 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d0297350a3e22f344edc2c"
+  },
+  "billItems": [
+    {
+      "product": {
+        "objects": [
+          {
+            "stockroomName": "Magacin 1",
+            "buyingPrice": "80",
+            "sellingPrice": "120",
+            "inStock": "200",
+            "minWantedAmount": "100",
+            "maxWantedAmount": "1000",
+            "isStockroom": true
+          },
+          {
+            "city": "Beograd",
+            "streetAndNumber": "Bulevar Kralja Aleksandra 65",
+            "buyingPrice": "80",
+            "sellingPrice": "120",
+            "inStock": "200",
+            "minWantedAmount": "100",
+            "maxWantedAmount": "500",
+            "isStockroom": false
+          }
+        ],
+        "_id": "62d024a550a3e22f344edc1e",
+        "username": "prodavnica",
+        "code": "2",
+        "name": "banana",
+        "unitOfMeasure": "kg",
+        "tax": 20,
+        "type": "",
+        "countryOfOrigin": "Dzamajka",
+        "foreignName": "",
+        "barCode": "",
+        "producer": "Derbi",
+        "customTariff": 10,
+        "ecoTax": false,
+        "akciza": false,
+        "minWantedAmount": 100,
+        "maxWantedAmount": 10000,
+        "description": "Lepe banane.",
+        "declaration": "Deklaracija",
+        "hasImg": true,
+        "__v": 0,
+        "category": "Hrana/Voce"
+      },
+      "amount": "10",
+      "sellingPrice": "120"
+    }
+  ],
+  "username": "prodavnica",
+  "money": null,
+  "toPay": 1200,
+  "inTaxes": 240,
+  "identifierNumber": "12345",
+  "buyerName": "",
+  "buyerSurname": "",
+  "slipNumber": "123",
+  "purchaser": null,
+  "date": {
+    "$date": {
+      "$numberLong": "1657809267457"
+    }
+  },
+  "type": "kartica",
+  "firmName": "Prodavnica",
+  "objectName": "Beograd/Bulevar Kralja Aleksandra 65",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02dc650a3e22f344edc33"
+  },
+  "billItems": [
+    {
+      "product": {
+        "objects": [
+          {
+            "city": "Uzice",
+            "streetAndNumber": "Ulica 1",
+            "buyingPrice": "30",
+            "sellingPrice": "100",
+            "inStock": "80",
+            "minWantedAmount": "50",
+            "maxWantedAmount": "200",
+            "isStockroom": false
+          }
+        ],
+        "_id": "62d02bb450a3e22f344edc32",
+        "username": "ugostitelj",
+        "code": "2",
+        "name": "Rakija",
+        "unitOfMeasure": "l",
+        "tax": 20,
+        "type": "drink",
+        "countryOfOrigin": "Srbija",
+        "foreignName": "",
+        "barCode": "",
+        "producer": "",
+        "customTariff": 0,
+        "ecoTax": true,
+        "akciza": false,
+        "minWantedAmount": 0,
+        "maxWantedAmount": 0,
+        "description": "",
+        "declaration": "",
+        "hasImg": false,
+        "__v": 0
+      },
+      "amount": "1",
+      "sellingPrice": "100",
+      "tableNumber": "2",
+      "room": "Soba"
+    }
+  ],
+  "username": "ugostitelj",
+  "money": 100,
+  "toPay": 100,
+  "inTaxes": 20,
+  "identifierNumber": "12345",
+  "buyerName": "",
+  "buyerSurname": "",
+  "slipNumber": "",
+  "purchaser": null,
+  "date": {
+    "$date": {
+      "$numberLong": "1657810374166"
+    }
+  },
+  "type": "gotovina",
+  "firmName": "Ugostiteljska radnja",
+  "objectName": "Uzice/Ulica 1",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02de650a3e22f344edc34"
+  },
+  "billItems": [
+    {
+      "product": {
+        "objects": [
+          {
+            "city": "Uzice",
+            "streetAndNumber": "Ulica 1",
+            "buyingPrice": "60",
+            "sellingPrice": "140",
+            "inStock": "400",
+            "minWantedAmount": "100",
+            "maxWantedAmount": "1000",
+            "isStockroom": false
+          }
+        ],
+        "_id": "62d02b7850a3e22f344edc31",
+        "username": "ugostitelj",
+        "code": "1",
+        "name": "Pivo",
+        "unitOfMeasure": "l",
+        "tax": 20,
+        "type": "drink",
+        "countryOfOrigin": "",
+        "foreignName": "",
+        "barCode": "",
+        "producer": "",
+        "customTariff": 0,
+        "ecoTax": false,
+        "akciza": false,
+        "minWantedAmount": 0,
+        "maxWantedAmount": 0,
+        "description": "",
+        "declaration": "",
+        "hasImg": false,
+        "__v": 0
+      },
+      "amount": "2",
+      "sellingPrice": "140",
+      "tableNumber": "3",
+      "room": "Soba"
+    }
+  ],
+  "username": "ugostitelj",
+  "money": null,
+  "toPay": 280,
+  "inTaxes": 56,
+  "identifierNumber": "123456789",
+  "buyerName": "nekiKupac",
+  "buyerSurname": "nekiKupac",
+  "slipNumber": "",
+  "purchaser": null,
+  "date": {
+    "$date": {
+      "$numberLong": "1657810406752"
+    }
+  },
+  "type": "cek",
+  "firmName": "Ugostiteljska radnja",
+  "objectName": "Uzice/Ulica 1",
+  "__v": 0
+}]

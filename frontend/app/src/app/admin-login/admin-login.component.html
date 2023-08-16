@@ -1,0 +1,31 @@
+<body>
+    <div class = 'mat-display-1 title'>Dobrodošli!</div>
+    <br/>
+    <div class = 'mat-title'>Prijavite se</div>
+    <form [formGroup] = 'loginForm'> 
+        <table>
+            <tr>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Korisnicko ime</mat-label>
+                    <input matInput required formControlName = 'username'>
+                    <mat-error *ngIf = 'loginForm.controls["username"].hasError("required")'>Korisnicko ime je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </tr>   
+            <tr>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Lozinka</mat-label>
+                    <input matInput required type="password" formControlName = 'password'>
+                    <mat-error *ngIf = 'loginForm.controls["password"].hasError("required")'>Lozinka je <strong>obavezna</strong></mat-error>
+                </mat-form-field>
+            </tr>   
+            <tr>
+                <button mat-raised-button (click) = 'login()'>
+                    Prijavi se
+                </button>
+            </tr>
+            <tr>
+                <span class = 'err'>{{error}}</span>
+            </tr>
+        </table>
+    </form>
+</body>

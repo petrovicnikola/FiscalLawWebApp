@@ -1,0 +1,28 @@
+form {
+    display: table;
+    margin: auto;
+}
+
+.mat-title{
+    margin-top: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+td{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+th{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+canvas {
+    border-style: solid;
+    margin-top: 20px;
+}

@@ -1,0 +1,17 @@
+<div *ngFor = 'let firm of firms'>
+    <mat-card>
+        <mat-card-content>
+            <b>Email</b>: {{firm.email}} <br/>
+            <b>Naziv preduzeca</b>: {{firm.firmName}} <br/>
+            <b>Br. telefona</b>: {{firm.phoneNumber}} <br/>
+            <b>PIB</b>: {{firm.pib}} <br/>
+            <b>Drzava</b>: {{firm.country}} <br/>
+            <b>Grad</b>: {{firm.city}} <br/>
+            <b>Postanski broj</b>: {{firm.zipCode}} <br/>
+            <b>Ulica i broj</b>: {{firm.streetAndNumber}}
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="accent" (click) = 'showArticles(firm)'>Artikli</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

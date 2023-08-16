@@ -1,0 +1,69 @@
+<body>
+    <div class ='mat-title'>Izmeni podatke o objektu/kasi</div>
+    <form [formGroup] = 'cashRegisterForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Drzava</mat-label>
+                        <input matInput required formControlName = 'country'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["country"].hasError("required")'>Drzava je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Grad</mat-label>
+                        <input matInput required formControlName = 'city'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["city"].hasError("required")'>Grad je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Ulica i broj</mat-label>
+                        <input matInput required formControlName = 'streetAndNumber'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["streetAndNumber"].hasError("required")'>Ulica i broj je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Postanski broj</mat-label>
+                        <input matInput required formControlName = 'zipCode'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["zipCode"].hasError("required")'>Posanski broj je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Tip kase</mat-label>
+                        <mat-select required formControlName = 'cashRegisterType'>
+                            <mat-option value='111'>111</mat-option>
+                            <mat-option value = '112'>112</mat-option>
+                            <mat-option value = "113">113</mat-option>
+                            <mat-option value = '114'>114</mat-option>
+                            <mat-option value = '115'>115</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["cashRegisterType"].hasError("required")'>Tip kase je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class = 'btns'>
+                    <button mat-raised-button color = 'accent' (click) = 'update()'>
+                        Izmeni
+                    </button>
+                    <button mat-raised-button color = 'accent' (click) = 'back()'>
+                        Nazad
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <span class = "err">
+                    {{error}}
+                </span>
+            </tr>
+        </table>
+    </form>
+</body>

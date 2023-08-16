@@ -1,0 +1,32 @@
+<body>
+    <form>
+        <div class = 'mat-title'>Detalji racuna</div>
+        <table>
+            <tr>
+                <th>Naziv preduzeca</th>
+                <th>Objekat</th>
+                <th>Za placanje</th>
+                <th>Od toga porez</th>
+            </tr>
+            <tr>
+                <td>{{bill.firmName}}</td>
+                <td>{{bill.objectName}}</td>
+                <td>{{bill.toPay}}</td>
+                <td>{{bill.inTaxes}}</td>
+            </tr>
+        </table>
+        <div class = 'mat-title'>Artikli</div>
+        <table>
+            <tr>
+                <th>Naziv proizvoda</th>
+                <th>Kolicina</th>
+                <th>Prodajna cena</th>
+            </tr>
+            <tr *ngFor = 'let billItem of bill.billItems'>
+                <td>{{billItem.product.name}}</td>
+                <td>{{billItem.amount}}</td>
+                <td>{{billItem.sellingPrice}}</td>
+            </tr>
+        </table>
+    </form>
+</body>

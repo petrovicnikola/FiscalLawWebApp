@@ -1,0 +1,39 @@
+<body>
+    <form [formGroup] = 'searchForm'>
+        <table>
+            <tr>
+                <th>Proizvodjac</th>
+                <th>Proizvod</th>
+                <th>Najmanja prodajna cena</th>
+                <th>Dostupno u</th>
+            </tr>
+            <tr *ngFor = 'let p of productsRepresentation'>
+                <td>{{p.producer}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.minSellingPrice}}</td>
+                <td>{{p.objects}}</td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Proizvodjac</mat-label>
+                        <input matInput formControlName = 'producer'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Naziv proizvoda</mat-label>
+                        <input matInput formControlName = 'name'>
+                    </mat-form-field>
+                </td>
+                <td class = 'centerIt'>
+                    <button mat-raised-button color = 'accent' (click) = 'search()'>Pretrazi</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

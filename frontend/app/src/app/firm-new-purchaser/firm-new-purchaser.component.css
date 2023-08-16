@@ -1,0 +1,20 @@
+form {
+    display: table;
+    margin: auto;
+}
+
+table{
+    text-align: center;
+}
+
+.mat-title{
+    margin-top: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+.addingTable {
+    margin-top : 10px;
+}

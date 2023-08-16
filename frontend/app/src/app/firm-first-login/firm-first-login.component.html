@@ -1,0 +1,204 @@
+<body>
+    <div class = 'mat-title'>Unesite podatke neophodne pri prvom logovanju</div>
+    <form [formGroup] = 'infoForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-radio-group aria-label="Select an option" required formControlName = 'isShop'>
+                        <mat-radio-button value="1" [checked] = 'true'>Prodavnica</mat-radio-button>
+                        <mat-radio-button value="0">Ugostiteljski objekat</mat-radio-button>
+                      </mat-radio-group>
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <mat-radio-group aria-label="Select an option" required formControlName = 'inPDV'>
+                        <mat-radio-button value="1" [checked] = 'true'>U PDV sistemu</mat-radio-button>
+                        <mat-radio-button value="0">Van PDV sistema</mat-radio-button>
+                      </mat-radio-group>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Sifre delatnosti</mat-label>
+                        <mat-select required formControlName = 'codes' multiple>
+                            <mat-option value='111'>111</mat-option>
+                            <mat-option value = '112'>112</mat-option>
+                            <mat-option value = "113">113</mat-option>
+                            <mat-option value = '114'>114</mat-option>
+                            <mat-option value = '115'>115</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = 'infoForm.controls["codes"].hasError("required")'>Sifra delatnosti je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr> 
+<!--            <tr>
+                <td>
+                    <button mat-raised-button (click) = 'addData()'>
+                        Dodaj podatke
+                    </button>
+                </td>
+            </tr>
+            -->
+            <tr>
+                <td>
+                    <span class = 'err'>{{errorData}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+    <br/>
+    <br/>
+    <div class = 'mat-title'>Unesite ziro racune</div>
+    <div class ='mat-h5'>Najmanje jedan*</div>
+    <form [formGroup] = 'bankAccountForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Broj racuna</mat-label>
+                        <input matInput required formControlName = 'bankAccountNumber'>
+                        <mat-error *ngIf = 'bankAccountForm.controls["bankAccountNumber"].hasError("required")'>Broj racuna je <strong>obavezno</strong> polje u formatu 3cifre-12cifara-2cifre</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Banka</mat-label>
+                        <input matInput required formControlName = 'bankName'>
+                        <mat-error *ngIf = 'bankAccountForm.controls["bankName"].hasError("required")'>Naziv banke je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button (click) = 'addBankAccount()'>Dodaj</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class = 'err'>{{errorBankAccount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class = 'info'>{{infoBankAccount}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br/>
+    <br/>
+    <div class = 'mat-title'>Unesite magacine</div>
+    <div class ='mat-h5'>Najmanje jedan*</div>
+    <form [formGroup] = 'stockroomForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Naziv magacina</mat-label>
+                        <input matInput required formControlName = 'name'>
+                        <mat-error *ngIf = 'stockroomForm.controls["name"].hasError("required")'>Naziv magacina je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button mat-raised-button (click) = 'addStockroom()'>Dodaj</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class = 'err'>{{errorStockroom}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                        <span class = 'info'>{{infoStockroom}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br/>
+    <br/>
+    <div class = 'mat-title'>Unesite fiskalne kase</div>
+    <div class ='mat-h5'>Najmanje jedna*</div>
+    <div class = 'mat-h3'>Adresa objekta u kome se nalazi kasa:</div>
+    <form [formGroup] = 'cashRegisterForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Drzava</mat-label>
+                        <input matInput required formControlName = 'country'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["country"].hasError("required")'>Drzava je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Grad</mat-label>
+                        <input matInput required formControlName = 'city'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["city"].hasError("required")'>Grad je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Ulica i broj</mat-label>
+                        <input matInput required formControlName = 'streetAndNumber'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["streetAndNumber"].hasError("required")'>Ulica i broj je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Postanski broj</mat-label>
+                        <input matInput required formControlName = 'zipCode'>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["zipCode"].hasError("required")'>Posanski broj je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Tip kase</mat-label>
+                        <mat-select required formControlName = 'cashRegisterType'>
+                            <mat-option value='111'>111</mat-option>
+                            <mat-option value = '112'>112</mat-option>
+                            <mat-option value = "113">113</mat-option>
+                            <mat-option value = '114'>114</mat-option>
+                            <mat-option value = '115'>115</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = 'cashRegisterForm.controls["cashRegisterType"].hasError("required")'>Tip kase je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button (click) = 'addCashRegister()'>Dodaj</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class = 'err'>{{errorCashRegister}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class = 'info'>{{infoCashRegister}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class="finalBtn">
+        <button mat-raised-button color="accent" class = 'btn' (click) = 'finish()'>Zavrsi</button>
+        <br/>
+        <span class = "err">
+            {{errorFinish}}
+        </span>
+    </div>
+</body>

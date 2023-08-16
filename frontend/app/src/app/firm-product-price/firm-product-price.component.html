@@ -1,0 +1,54 @@
+<body>
+    <form [formGroup] = 'infoForm'>
+        <div class = 'mat-title' *ngIf = 'stockroom != null'>{{stockroom.name}} - {{product.name}}</div>
+        <div class = 'mat-title' *ngIf = 'cashRegister != null'>{{cashRegister.city}}, {{cashRegister.streetAndNumber}} - {{product.name}}</div>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Nabavna cena</mat-label>
+                        <input matInput formControlName = 'buyingPrice'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Prodajna cena</mat-label>
+                        <input matInput formControlName = 'sellingPrice'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Minimalna zeljena kolicina</mat-label>
+                        <input matInput formControlName = 'minWantedAmount'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Maksimalna zeljena kolicina</mat-label>
+                        <input matInput formControlName = 'maxWantedAmount'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Tekuce stanje</mat-label>
+                        <input matInput formControlName = 'inStock'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button color = 'accent' (click) = 'add()'>
+                        Dodaj
+                    </button>
+                    <button mat-raised-button color = 'accent' (click) = 'back()'>
+                        Nazad
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

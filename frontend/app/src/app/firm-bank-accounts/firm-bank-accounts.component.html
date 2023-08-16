@@ -1,0 +1,27 @@
+<body>
+    <div class ='mat-title'>Ziro racuni</div>
+    <table>
+        <tr *ngFor = 'let ba of bankAccounts'>
+            <td>
+                {{ba.bankAccountNumber}}
+            </td>
+            <td>
+                {{ba.bankName}}
+            </td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = 'delete(ba)'>
+                    <span class = 'material-icons'>
+                        delete
+                    </span>
+                </button>
+            </td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = update(ba)>
+                    <span class = 'material-icons'>
+                        edit
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>

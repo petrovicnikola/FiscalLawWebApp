@@ -1,0 +1,23 @@
+<div class = 'mat-title'>Narucioci</div>
+<form>
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Broj telefona</th>
+            <th>Email</th>
+            <th>PIB</th>
+            <th>Drzava</th>
+            <th>Grad</th>
+            <th>Ulica i broj</th>
+        </tr>
+        <tr *ngFor = 'let p of purchasers'>
+            <td>{{p.firmName}}</td>
+            <td>{{p.phoneNumber}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.pib}}</td>
+            <td>{{p.country}}</td>
+            <td>{{p.city}}</td>
+            <td>{{p.streetAndNumber}}</td>
+        </tr>
+    </table>
+</form>

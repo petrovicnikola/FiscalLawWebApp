@@ -1,0 +1,33 @@
+form {
+    display: table;
+    margin: auto;
+}
+
+.mat-title{
+    margin-top: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+td, th{
+    padding-left: 10px;
+}
+
+th{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table{
+    text-align: center;
+}
+
+mat-checkbox {
+    margin-right: 5px;
+}
+
+button {
+    margin-left: 5px;
+}

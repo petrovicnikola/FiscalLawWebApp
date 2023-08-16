@@ -1,0 +1,149 @@
+<body>
+    <div class = 'mat-title'>Dodaj novog narucioca</div>
+    <div class = 'mat-h3'>Dodaj postojeceg:</div>
+    <form [formGroup] = 'findPurchaserForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>PIB</mat-label>
+                        <input matInput required formControlName = 'pib'>
+                        <mat-error *ngIf = 'findPurchaserForm.controls["pib"].hasError("required")'>PIB je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <button mat-raised-button color="accent" (click) = 'find()'>
+                        Pretrazi
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{msg}}
+                </td>
+            </tr>
+        </table>
+        <table *ngIf="user != null">
+            <tr>
+                <th>Naziv</th>
+                <th>Email</th>
+                <th>Broj telefona</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>{{user.firmName}}</td>
+                <td>
+                    {{user.email}}
+                </td>
+                <td>
+                    {{user.phoneNumber}}
+                </td>
+                <td>
+                    <button mat-raised-button color="accent" (click) = 'add()'>
+                        Dodaj
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class = 'mat-h3'>Dodaj novog:</div>
+    <form [formGroup] = 'addNewPurchaserForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color='accent'>
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Pr. pat@primer.com" required formControlName = 'email'>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["email"].hasError("email")'>Unesite validan format e-maila.</mat-error>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["email"].hasError("required")'>Email je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Naziv preduzeca</mat-label>
+                        <input matInput required formControlName = 'firmName'>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["firmName"].hasError("required")'>Naziv preduzeca je <strong>obavezno</strong> polje.</mat-error>
+                        <mat-error>
+                            
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Telefon</mat-label>
+                        <input type="tel" matInput placeholder="062 123 45 67" required formControlName = 'phoneNumber'>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["phoneNumber"].hasError("required")'>Broj telefona je <strong>obavezno</strong> polje.</mat-error>
+                  </mat-form-field>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>PIB</mat-label>
+                        <input matInput formControlName = 'pib'>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["pib"].hasError("required")'>PIB je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Maticni broj preduzeca</mat-label>
+                        <input matInput formControlName = 'id'>
+                        <mat-error *ngIf = 'addNewPurchaserForm.controls["id"].hasError("required")'>Maticni broj je <strong>obavezno</strong> polje.</mat-error>
+                  </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Drzava</mat-label>
+                        <input matInput formControlName = 'country'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Grad</mat-label>
+                        <input matInput formControlName = 'city'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Postanski broj</mat-label>
+                        <input matInput formControlName = 'zipCode'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Ulica i broj</mat-label>
+                        <input matInput formControlName = 'streetAndNumber'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Broj dana za placanje</mat-label>
+                        <input matInput formControlName = 'daysToPay'>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Procenat rabata</mat-label>
+                        <input matInput formControlName = 'rabat'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button color = 'accent' (click) = 'addNewPurchaser()'>
+                        Dodaj
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>

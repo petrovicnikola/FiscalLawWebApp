@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "62d023e850a3e22f344edc1c"
+  },
+  "name": "Magacin 1",
+  "username": "prodavnica",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02b4f50a3e22f344edc2f"
+  },
+  "name": "Magacin 1",
+  "username": "ugostitelj",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d02b4f50a3e22f344edc30"
+  },
+  "name": "Magacin 2",
+  "username": "ugostitelj",
+  "__v": 0
+}]

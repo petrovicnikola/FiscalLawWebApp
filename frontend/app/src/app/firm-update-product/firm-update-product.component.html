@@ -1,0 +1,143 @@
+<form [formGroup] = 'productForm'>
+    <div class = 'mat-title'>Izmeni artikal</div>
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <div class = 'mat-h3'>Obavezni podaci</div>
+            </td>
+        </tr>
+        <tr>
+            <!--<td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Sifra</mat-label>
+                    <input matInput required formControlName = 'code'>
+                    <mat-error *ngIf = 'productForm.controls["code"].hasError("required")'>Sifra je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td> -->
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Naziv</mat-label>
+                    <input matInput required formControlName = 'name'>
+                    <mat-error *ngIf = 'productForm.controls["name"].hasError("required")'>Naziv je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Jedinica mere</mat-label>
+                    <input matInput required formControlName = 'unitOfMeasure'>
+                    <mat-error *ngIf = 'productForm.controls["unitOfMeasure"].hasError("required")'>Jedinica mere je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td>
+            <td *ngIf = 'user.inPDV'>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Poreska stopa</mat-label>
+                    <mat-select required formControlName = 'tax'>
+                        <mat-option value='20'>Opsta (20%)</mat-option>
+                        <mat-option value = '10'>Posebna (10%)</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf = 'productForm.controls["tax"].hasError("required")'>Poreska stopa je <strong>obavezno</strong> polje.</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf = '!user.isShop && !user.isBuyer'>
+                <mat-radio-group aria-label="Select an option" required formControlName = 'type'>
+                    <mat-radio-button value="food" [checked] = 'true'>Hrana</mat-radio-button>
+                    <mat-radio-button value="drink">Pice</mat-radio-button>
+                    <mat-radio-button value="material">Sirovina</mat-radio-button>
+                  </mat-radio-group>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class = 'mat-h3'>Dopunski podaci</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Zemlja porekla</mat-label>
+                    <input matInput formControlName = 'countryOfOrigin'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Originalni naziv</mat-label>
+                    <input matInput formControlName = 'foreignName'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Bar kod broj</mat-label>
+                    <input matInput formControlName = 'barCode'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Proizvodjac</mat-label>
+                    <input matInput formControlName = 'producer'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Carinska tarifa</mat-label>
+                    <input matInput formControlName = 'customTariff'>
+                </mat-form-field>
+            </td>
+            <td>
+                  <mat-checkbox formControlName = 'ecoTax' value = 'true'>Eko taksa</mat-checkbox>
+                  <mat-checkbox formControlName = 'akciza' value = 'true'>Akcize</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Minimalna zeljena kolicina</mat-label>
+                    <input matInput formControlName = 'minWantedAmount'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Maksimalna zeljena kolicina</mat-label>
+                    <input matInput formControlName = 'maxWantedAmount'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Opis</mat-label>
+                    <input matInput formControlName = 'description'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Deklaracija</mat-label>
+                    <input matInput formControlName = 'declaration'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+           <td colspan="2">
+                <button mat-raised-button color = 'accent' (click) = 'updateProduct()'>
+                    Izmeni
+                </button>
+                <button mat-raised-button color = 'accent' (click) = 'back()'>
+                    Nazad
+                </button>
+           </td> 
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span>{{error}}</span>
+            </td>
+        </tr>
+    </table>
+</form>

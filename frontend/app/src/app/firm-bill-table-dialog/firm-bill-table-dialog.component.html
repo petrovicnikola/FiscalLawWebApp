@@ -1,0 +1,8 @@
+<form [formGroup] = 'infoForm'>
+<mat-form-field appearance='outline' color = 'accent'>
+    <mat-label>Broj stola</mat-label>
+    <input matInput required formControlName = 'name'>
+    <mat-error *ngIf = 'infoForm.controls["name"].hasError("required")'>Broj stola je <strong>obavezno</strong> polje</mat-error>
+    </mat-form-field>
+</form>
+<button mat-raised-button (click) = setTable()>Zavrsi</button>

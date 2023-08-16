@@ -1,0 +1,46 @@
+form {
+    display: table;
+    margin: auto;
+}
+
+table{
+    text-align: center;
+}
+
+
+
+.mat-title{
+    margin-top: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+
+span.err {
+    color: red;
+}
+
+span.info {
+    color: green;
+}
+
+button {
+    margin-top: 20px;
+}
+
+mat-radio-button {
+    margin: 10px;
+}
+
+.finalBtn{
+    text-align: center;
+}
+
+.btn {
+    width: 20%;
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

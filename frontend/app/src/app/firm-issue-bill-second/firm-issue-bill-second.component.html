@@ -1,0 +1,52 @@
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent' *ngIf = 'selectedCashRegister == null'>
+                        <mat-label>Magacini</mat-label>
+                        <mat-select>
+                            <mat-option (click) = 'setSelectedStockroom(null)'></mat-option>
+                            <div *ngFor = 'let s of stockrooms'>
+                                <mat-option value={{s.name}} (click) = 'setSelectedStockroom(s)'>{{s.name}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent' *ngIf = 'selectedStockroom == null'>
+                        <mat-label>Objekti</mat-label>
+                        <mat-select>
+                            <mat-option (click) = 'setSelectedCashRegister(null)'></mat-option>
+                            <div *ngFor = 'let cr of cashRegisters'>
+                                <mat-option value={{cr.city}} (click) = 'setSelectedCashRegister(cr)'>{{cr.city}}/{{cr.streetAndNumber}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr *ngFor = 'let p of products'>
+                <td>
+                    {{p.name}}/{{p.producer}}
+                </td>
+                <td>
+                    <button mat-raised-button color="accent" (click) = 'add(p)'>Dodaj na racun</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button color = 'accent' (click) = 'endBill()'>Zavrsi racun</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <mat-form-field appearance='outline' color = 'accent'>
+        <mat-label>Odeljenje</mat-label>
+        <mat-select>
+            <div *ngFor = 'let r of rooms'>
+                <mat-option value="{{r.name}}" (click) = 'selectRoom(r)'>{{r.name}}</mat-option>
+            </div>
+        </mat-select>
+    </mat-form-field>
+    <canvas #canvas width="600" height="300"></canvas>
+</body>

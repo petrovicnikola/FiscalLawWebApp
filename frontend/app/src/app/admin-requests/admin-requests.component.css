@@ -1,0 +1,22 @@
+mat-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.material-icons {
+    font-size: 24px;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+}
+
+.lgout {
+    font-size: 18px;
+    vertical-align: middle;
+}

@@ -1,0 +1,54 @@
+<body>
+    <h1>Dobrodošli</h1>
+    <br>
+    <a routerLink = "/login"><b>Prijava</b></a>
+    &nbsp; &nbsp; &nbsp;
+    <a routerLink = '/register'><b>Registracija</b></a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class = 'mat-title'>Poslednji racuni</div>
+
+    <div *ngIf = 'bills.length > 0'>
+        <strong>Platio</strong>&nbsp; {{bills[0].toPay}}
+        <strong>Firma</strong>&nbsp;  {{bills[0].firmName}}
+        <strong>Datum</strong>&nbsp;  {{bills[0].date}}
+    </div>
+
+    <div *ngIf = 'bills.length > 1'>
+        <strong>Platio</strong>&nbsp; {{bills[1].toPay}}
+        <strong>Firma</strong>&nbsp;  {{bills[1].firmName}}
+        <strong>Datum</strong>&nbsp;  {{bills[1].date}}
+    </div>
+
+    <div *ngIf = 'bills.length > 2'>
+        <strong>Platio</strong>&nbsp; {{bills[2].toPay}}
+        <strong>Firma</strong>&nbsp;  {{bills[2].firmName}}
+        <strong>Datum</strong>&nbsp;  {{bills[2].date}}
+    </div>
+
+    <div *ngIf = 'bills.length > 3'>
+        <strong>Platio</strong>&nbsp; {{bills[3].toPay}}
+        <strong>Firma</strong>&nbsp;  {{bills[3].firmName}}
+        <strong>Datum</strong>&nbsp;  {{bills[3].date}}
+    </div>
+
+    <div *ngIf = 'bills.length > 4'>
+        <strong>Platio</strong>&nbsp; {{bills[4].toPay}}
+        <strong>Firma</strong>&nbsp;  {{bills[4].firmName}}
+        <strong>Datum</strong>&nbsp;  {{bills[4].date}}
+    </div>
+
+</body>

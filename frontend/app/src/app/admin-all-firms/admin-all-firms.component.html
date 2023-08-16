@@ -1,0 +1,33 @@
+<div *ngFor = 'let firm of firms'>
+    <mat-card>
+        <mat-card-content>
+            <b>Ime</b>: {{firm.name}} <br/>
+            <b>Prezime</b>: {{firm.surname}} <br/>
+            <b>Korisničko ime</b>: {{firm.username}} <br/>
+            <b>Email</b>: {{firm.email}} <br/>
+            <b>Naziv preduzeca</b>: {{firm.firmName}} <br/>
+            <b>Br. telefona</b>: {{firm.phoneNumber}} <br/>
+            <b>Maticni broj</b>: {{firm.id}} <br/>
+            <b>PIB</b>: {{firm.pib}} <br/>
+            <b>Drzava</b>: {{firm.country}} <br/>
+            <b>Grad</b>: {{firm.city}} <br/>
+            <b>Postanski broj</b>: {{firm.zipCode}} <br/>
+            <b>Ulica i broj</b>: {{firm.streetAndNumber}}
+        </mat-card-content>
+        <mat-card-actions>
+            <div *ngIf = 'firm.status == "accepted"'>
+                <button disabled mat-raised-button color="primary" (click) = 'updateStatus("accepted", firm.username)'>Aktiviraj</button>
+            </div>
+            <div *ngIf = 'firm.status != "accepted"'>
+                <button mat-raised-button color="primary" (click) = 'updateStatus("accepted", firm.username)'>Aktiviraj</button>
+            </div>
+            <div *ngIf = 'firm.status == "rejected"'>
+                <button disabled mat-raised-button color='accent' (click) = 'updateStatus("rejected", firm.username)'>Deaktiviraj</button>
+            </div>
+            <div *ngIf = 'firm.status != "rejected"'>
+                <button mat-raised-button color='accent' (click) = 'updateStatus("rejected", firm.username)'>Deaktiviraj</button>
+            </div>
+            
+        </mat-card-actions>
+    </mat-card>
+</div>

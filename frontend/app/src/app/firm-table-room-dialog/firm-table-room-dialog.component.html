@@ -1,0 +1,18 @@
+<body>
+    <form [formGroup] = 'infoForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Naziv</mat-label>
+                        <input matInput required formControlName = 'name'>
+                        <mat-error *ngIf = 'infoForm.controls["name"].hasError("required")'>Ime je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+                <td>
+                    <button mat-raised-button color = 'accent' (click) = 'confirm()'>Potvrdi</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

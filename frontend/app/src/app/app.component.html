@@ -1,0 +1,170 @@
+<body>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <a href="">
+            <span>FiskalizacijaApp</span>
+          </a>
+        </mat-toolbar-row>
+  
+        <mat-toolbar-row *ngIf = 'user != null && user.username == "admin"' class = 'mat-elevation-z10'>
+            <button mat-button [matMenuTriggerFor]="menuFirm">Preduzeca
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuFirm="matMenu">
+                <button mat-menu-item (click) = 'requests()'>Zahtevi</button>
+                <button mat-menu-item (click) = 'newFirm()'>Dodavanje novog</button>
+                <button mat-menu-item (click) = 'allFirms()'>Sva preduzeca</button>
+                <button mat-menu-item (click) = 'dailyReports()'>Pregled dnevnih izvestaja</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuBuyer">Kupci
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuBuyer="matMenu">
+                <button mat-menu-item (click) = 'newBuyer()'>Dodavanje novog</button>
+            </mat-menu>
+
+            <span class = 'spacer'></span>
+            <span class="material-icons" [matMenuTriggerFor]="menuProfile">
+                account_circle
+            </span>
+            <mat-menu #menuProfile="matMenu">
+                <button mat-menu-item (click) = 'logout()'>Odjavi se
+                    <span class="material-icons lgout">
+                        logout
+                    </span>
+                </button>
+            </mat-menu>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row *ngIf = 'user != null && user.isBuyer == false && user.username != "admin" && user.firstLogin == false' class = 'mat-elevation-z10'>
+            <button mat-button [matMenuTriggerFor]="menuFirmData">Podaci o preduzecu
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuFirmData="matMenu">
+                <button mat-menu-item (click) = 'firmGeneralData()'>Opsti podaci</button>
+                <button mat-menu-item (click) = 'firmBankAccounts()'>Ziro racuni</button>
+                <button mat-menu-item (click) = 'firmStockroomsAndCashRegisters()'>Magacini i kase</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuPurchaser">Narucioci
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuPurchaser="matMenu">
+                <button mat-menu-item (click) = 'newPurchaser()'>Novi narucilac</button>
+                <button mat-menu-item (click) = 'allPurchasers()'>Pregled</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuProducts">Robe i usluge
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuProducts="matMenu">
+                <button mat-menu-item (click) = 'products()'>Artikli</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuProductCategories">Raspored artikala
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuProductCategories="matMenu">
+                <button mat-menu-item (click) = 'createProductCategory()'>Formiranje kategorije</button>
+                <button mat-menu-item (click) = 'setProductCategory()'>Kategorisanje artikla</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuBill">Izdavanje racuna
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuBill="matMenu">
+                <button mat-menu-item (click) = 'createBill()'>Novi racun</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuReport">Pregled izvestaja
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuReport="matMenu">
+                <button mat-menu-item (click) = 'dailyEarnings()'>Dnevni pazar</button>
+                <button mat-menu-item (click) = 'bills()'>Izvestaj po stavkama</button>
+            </mat-menu>
+
+            <div *ngIf = 'user.isShop == false'>
+                <button mat-button [matMenuTriggerFor]="menuTables">Raspored stolova
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+                </button>
+                <mat-menu #menuTables="matMenu">
+                    <button mat-menu-item (click) = 'tables()'>Raspored</button>
+                </mat-menu>
+            </div>
+
+
+            <span class = 'spacer'></span>
+            <span class="material-icons" [matMenuTriggerFor]="menuProfile">
+                account_circle
+            </span>
+            <mat-menu #menuProfile="matMenu">
+                <button mat-menu-item (click) = 'changePassword()'>Promeni lozinku
+                    <span class="material-icons lgout">
+                        settings
+                    </span>
+                </button>
+                <button mat-menu-item (click) = 'logout()'>Odjavi se
+                    <span class="material-icons lgout">
+                        logout
+                    </span>
+                </button>
+            </mat-menu>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row *ngIf = 'user != null && user.isBuyer == true && user.username != "admin" ' class = 'mat-elevation-z10'>
+            <button mat-button [matMenuTriggerFor]="menuFirmData">Preduzeca
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuFirmData="matMenu">
+                <button mat-menu-item (click) = 'buyer()'>Sva preduzeca</button>
+            </mat-menu>
+
+
+            <button mat-button [matMenuTriggerFor]="menuBuyerBills">Racuni
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuBuyerBills="matMenu">
+                <button mat-menu-item (click) = 'buyerBills()'>Svi racuni</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="menuBuyerSpending">Potrosnja
+                <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menuBuyerSpending="matMenu">
+                <button mat-menu-item (click) = 'buyerSpending()'>U mesecu</button>
+                <button mat-menu-item (click) = 'buyerSpendingYear()'>U godini</button>
+            </mat-menu>
+                
+
+            <span class = 'spacer'></span>
+            <span class="material-icons" [matMenuTriggerFor]="menuProfile">
+                account_circle
+            </span>
+            <mat-menu #menuProfile="matMenu">
+                <button mat-menu-item (click) = 'changePassword()'>Promeni lozinku
+                    <span class="material-icons lgout">
+                        settings
+                    </span>
+                </button>
+                <button mat-menu-item (click) = 'logout()'>Odjavi se
+                    <span class="material-icons lgout">
+                        logout
+                    </span>
+                </button>
+            </mat-menu>
+        </mat-toolbar-row>
+
+    </mat-toolbar>
+  
+  
+  
+    <div class = 'content'>
+      <router-outlet></router-outlet>
+    </div>
+    
+    
+
+    <app-footer></app-footer>
+  </body>

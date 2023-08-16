@@ -1,0 +1,138 @@
+<body>
+    <div class = 'mat-title'>Opsti podaci</div>
+    <form [formGroup] = 'generalInfoForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Ime odgovornog lica</mat-label>
+                        <input matInput required formControlName = 'name'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["name"].hasError("required")'>Ime je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Prezime odgovornog lica</mat-label>
+                        <input matInput required formControlName = 'surname'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["surname"].hasError("required")'>Prezime je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" color='accent'>
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput placeholder="Pr. pat@primer.com" required formControlName = 'email'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["email"].hasError("email")'>Unesite validan format e-maila.</mat-error>
+                        <mat-error *ngIf = 'generalInfoForm.controls["email"].hasError("required")'>Email je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" color = 'accent'>
+                        <mat-label>Telefon</mat-label>
+                        <input type="tel" matInput placeholder="062 123 45 67" required formControlName = 'phoneNumber'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["phoneNumber"].hasError("required")'>Broj telefona je <strong>obavezno</strong> polje.</mat-error>
+                  </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>                    
+                    <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Naziv firme</mat-label>
+                    <input matInput required formControlName = 'firmName'>
+                    <mat-error *ngIf = 'generalInfoForm.controls["firmName"].hasError("required")'>Naziv firme je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Maticni broj firme</mat-label>
+                        <input matInput required formControlName = 'id'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["id"].hasError("required")'>Maticni broj firme je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>PIB</mat-label>
+                        <input matInput required formControlName = 'pib'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["pib"].hasError("required")'>PIB je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+                <td>
+                        <mat-radio-group aria-label="Select an option" required formControlName = 'inPDV'>
+                        <mat-radio-button value="1" [checked] = "inPDV">U PDV</mat-radio-button> &nbsp;
+                        <mat-radio-button value="0" [checked] = "!inPDV">Van PDV</mat-radio-button>
+                      </mat-radio-group>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Drzava</mat-label>
+                        <input matInput required formControlName = 'country'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["country"].hasError("required")'>Drzava je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Grad</mat-label>
+                        <input matInput required formControlName = 'city'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["city"].hasError("required")'>Grad je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Postanski broj</mat-label>
+                        <input matInput required formControlName = 'zipCode'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["zipCode"].hasError("required")'>Postanski broj je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Ulica i broj</mat-label>
+                        <input matInput required formControlName = 'streetAndNumber'>
+                        <mat-error *ngIf = 'generalInfoForm.controls["streetAndNumber"].hasError("required")'>Ulica i broj su <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-radio-group aria-label="Select an option" required formControlName = 'isShop'>
+                        <mat-radio-button value="1" [checked] = "isShop">Prodavnica</mat-radio-button> &nbsp;
+                        <mat-radio-button value="0" [checked] = "!isShop">Ugostitelj</mat-radio-button>
+                      </mat-radio-group>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Sifre delatnosti</mat-label>
+                        <mat-select required formControlName = 'codes' multiple>
+                            <mat-option value='111'>111</mat-option>
+                            <mat-option value = '112'>112</mat-option>
+                            <mat-option value = "113">113</mat-option>
+                            <mat-option value = '114'>114</mat-option>
+                            <mat-option value = '115'>115</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf = 'generalInfoForm.controls["codes"].hasError("required")'>Sifra delatnosti je <strong>obavezno</strong> polje.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button #finishButton mat-raised-button color = 'accent' disabled (click) = 'finish(finishButton, editButton)'>
+                        Zavrsi
+                    </button>
+                </td>
+                <td>
+                    <button #editButton mat-raised-button color = 'accent' (click) = 'edit(finishButton, editButton)'>
+                        <span class="material-icons">
+                            edit
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

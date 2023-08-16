@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "62d027d750a3e22f344edc29"
+  },
+  "subcategories": [],
+  "name": "Opste",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62d027ee50a3e22f344edc2a"
+  },
+  "subcategories": [
+    "Voce"
+  ],
+  "name": "Hrana",
+  "__v": 0
+}]

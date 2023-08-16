@@ -1,0 +1,13 @@
+<body>
+        <mat-form-field appearance="fill">
+        <mat-label>Izaberite datum</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl] = 'date' (dateChange) = 'showEarnings()'>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div *ngIf = 'show'>
+        Zarada: {{sum}} <br/>
+        Od toga porez: {{tax}} <br/>
+    </div>
+</body>

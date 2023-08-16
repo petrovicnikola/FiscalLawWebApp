@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Dodaj kolicinu po {{data.unitOfMeasure}}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Kolicina</mat-label>
+    <input matInput [(ngModel)]="data.amount">
+  </mat-form-field>
+  <div *ngIf = 'needTable == true'>
+    <mat-form-field appearance="fill">
+      <mat-label>Broj stola</mat-label>
+      <input matInput [(ngModel)]="tableNumber">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.amount" cdkFocusInitial (click) = 'addTableNumber()'>Ok</button>
+</div>

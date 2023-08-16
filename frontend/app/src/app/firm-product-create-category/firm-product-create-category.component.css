@@ -1,0 +1,13 @@
+.hoverIt:hover{
+    cursor: pointer;
+    color : #FF4081;
+}
+
+button {
+    margin-left: 10px;
+}
+
+body{
+    text-align: center;
+}
+

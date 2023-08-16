@@ -1,0 +1,49 @@
+<body>
+    <form>
+        <mat-form-field appearance='outline' color = 'accent'>
+            <mat-label>Racuni</mat-label>
+            <mat-select >
+                <div *ngFor = 'let bill of bills'>
+                    <mat-option (click) = 'setBill(bill)'value='{{bill}}'>{{bill.type}}</mat-option>
+                </div>
+            </mat-select>
+        </mat-form-field>
+        <table *ngIf = 'bill != null'>
+            <tr>
+                <th>Proizvod</th>
+                <th>Kolicina</th>
+                <th>Prodajna cena</th>
+            </tr>
+            <tr *ngFor = 'let billItem of bill.billItems'>
+                <td>
+                    {{billItem.product.name}}
+                </td>
+                <td>
+                    {{billItem.amount}}
+                </td>
+                <td>
+                    {{billItem.sellingPrice}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr/>
+                </td>
+                <td>
+                    <hr/>
+                </td>
+                <td>
+                    <hr/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Ukupno: {{bill.toPay}}
+                </td>
+                <td>
+                    Od toga porez: {{bill.inTaxes}}
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

@@ -1,0 +1,72 @@
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent' *ngIf = 'selectedCashRegister == null'>
+                        <mat-label>Magacini</mat-label>
+                        <mat-select>
+                            <mat-option (click) = 'setSelectedStockroom(null)'></mat-option>
+                            <div *ngFor = 'let s of stockrooms'>
+                                <mat-option value={{s.name}} (click) = 'setSelectedStockroom(s)'>{{s.name}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent' *ngIf = 'selectedStockroom == null'>
+                        <mat-label>Objekti</mat-label>
+                        <mat-select>
+                            <mat-option (click) = 'setSelectedCashRegister(null)'></mat-option>
+                            <div *ngFor = 'let cr of cashRegisters'>
+                                <mat-option value={{cr.city}} (click) = 'setSelectedCashRegister(cr)'>{{cr.city}}/{{cr.streetAndNumber}}</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr *ngFor = 'let p of products'>
+                <td>
+                    {{p.name}}/{{p.producer}}
+                </td>
+                <td>
+                    <button mat-raised-button color="accent" (click) = 'add(p)'>Dodaj na racun</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button color = 'accent' (click) = 'endBill()'>Zavrsi racun</button>
+                </td>
+            </tr>
+        </table>
+        <div *ngIf = 'user.isShop == true'>
+            <div class = 'mat-title'>Racun</div>
+                <table>
+                    <tr>
+                        <th>Naziv proizvoda</th>
+                        <th>Proizvodjac</th>
+                        <th>Prodajna cena</th>
+                        <th>Porez</th>
+                        <th>Kolicina</th>
+                    </tr>
+                    <tr *ngFor = 'let billItem of billItems'>
+                        <td>
+                            {{billItem.product.name}}
+                        </td>
+                        <td>
+                            {{billItem.product.producer}}
+                        </td>
+                        <td>
+                            {{billItem.sellingPrice}}
+                        </td>
+                        <td>
+                            {{billItem.product.tax}}%
+                        </td>
+                        <td>
+                            {{billItem.amount}}/{{billItem.product.unitOfMeasure}}
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </form>
+</body>

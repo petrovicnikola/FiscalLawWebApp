@@ -1,0 +1,22 @@
+
+.mat-title{
+    margin-top: 20px;
+}
+
+div {
+    text-align: center;
+}
+
+body{
+    display: table;
+    margin: auto;
+}
+
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btns {
+    text-align: center;
+}

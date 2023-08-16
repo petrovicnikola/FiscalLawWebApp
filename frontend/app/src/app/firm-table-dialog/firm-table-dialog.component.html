@@ -1,0 +1,52 @@
+<body>
+    <form [formGroup] = 'infoForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Id</mat-label>
+                        <input matInput required formControlName = 'name'>
+                        <mat-error *ngIf = 'infoForm.controls["name"].hasError("required")'>Id je <strong>obavezno</strong> polje</mat-error>
+                        </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Oblik</mat-label>
+                        <mat-select formControlName = 'shape'>
+                            <mat-option value="circle">Krug</mat-option>
+                            <mat-option value = 'rect'>Pravougaonik</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr *ngIf = 'infoForm.controls["shape"].value == "rect"'>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Sirina</mat-label>
+                        <input matInput formControlName = 'width'>
+                        </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Visina</mat-label>
+                        <input matInput formControlName = 'height'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr *ngIf = 'infoForm.controls["shape"].value == "circle"'>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Poluprecnik</mat-label>
+                        <input matInput formControlName = 'r'>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button mat-raised-button color = 'accent' (click) = 'add()'>Dodaj</button>
+                    <button mat-raised-button color = 'accent' (click) = 'leave()'>Odustani</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

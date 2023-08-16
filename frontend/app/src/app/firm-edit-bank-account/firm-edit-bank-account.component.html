@@ -1,0 +1,38 @@
+<body>
+    <div class ='mat-title'>Izmeni podatke o ziro racunu</div>
+    <form [formGroup] = 'bankAccForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Broj racuna</mat-label>
+                        <input matInput required formControlName = 'bankAccountNumber'>
+                        <mat-error *ngIf = 'bankAccForm.controls["bankAccountNumber"].hasError("required")'>Broj racuna je <strong>obavezno</strong> polje u formatu 3cifre-12cifara-2cifre</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Banka</mat-label>
+                        <input matInput required formControlName = 'bankName'>
+                        <mat-error *ngIf = 'bankAccForm.controls["bankName"].hasError("required")'>Naziv banke je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class = 'btns'>
+                    <button mat-raised-button color = 'accent' (click) = 'update()'>
+                        Izmeni
+                    </button>
+                    <button mat-raised-button color = 'accent' (click) = 'back()'>
+                        Nazad
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span>{{error}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

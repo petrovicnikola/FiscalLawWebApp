@@ -1,0 +1,31 @@
+<body>
+    <div class ='mat-title'>Izmeni podatke o magacinu</div>
+    <form [formGroup] = 'stockroomForm'>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field appearance='outline' color = 'accent'>
+                        <mat-label>Naziv magacina</mat-label>
+                        <input matInput required formControlName = 'name'>
+                        <mat-error *ngIf = 'stockroomForm.controls["name"].hasError("required")'>Naziv magacina je <strong>obavezno</strong> polje</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td class = 'btns'>
+                    <button mat-raised-button color = 'accent' (click) = 'update()'>
+                        Izmeni
+                    </button>
+                    <button mat-raised-button color = 'accent' (click) = 'back()'>
+                        Nazad
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>{{error}}</span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

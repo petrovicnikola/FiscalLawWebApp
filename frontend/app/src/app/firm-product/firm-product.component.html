@@ -1,0 +1,250 @@
+<form [formGroup] = 'productForm'>
+    <div class = 'mat-title'>Artikli</div>
+    <div class = 'paginatorClass'>
+        <table>
+            <tr>
+                <td colspan="2">
+                    <div class = 'mat-h3'>Ukupno redova: {{numOfProducts}}</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Slika</th>
+                <th>Sifra</th>
+                <th>Naziv</th>
+                <th>Jedinica mere</th>
+                <th>Stopa poreza</th>
+                <th>Proizvodjac</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr *ngFor = 'let p of selectedProducts'>
+                <td>
+                    <div *ngIf = 'p.hasImg == true'>
+                        <img mat-card-lg-image src="http://localhost:4000/uploads/{{p.username}}{{p.code}}" >
+                    </div>
+                    <div *ngIf = 'p.hasImg == false'>
+                        <img mat-card-lg-image src="../../assets/img.png" >
+                    </div>
+                </td>
+                <td>{{p.code}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.unitOfMeasure}}</td>
+                <td>{{p.tax}}</td>
+                <td>{{p.producer}}</td>
+                <td>
+                    <button mat-raised-button color = 'accent' (click) = 'update(p)'>
+                        <span class = 'material-icons'>
+                            edit
+                        </span>
+                    </button>
+                </td>
+                <td>
+                    <button mat-raised-button color = 'accent' (click) = 'delete(p)'>
+                        <span class = 'material-icons'>
+                            delete
+                        </span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <mat-paginator [length]="numOfProducts"
+                    [pageSize]="10"
+                    (page)="changedPage($event)"
+                    aria-label="Select page">
+                </mat-paginator>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <button mat-raised-button color="accent" (click) = 'addNewProduct()'>
+                        Unesi
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <table *ngIf = 'showEntry'>
+        <tr>
+            <td colspan="2">
+                <div class = 'mat-h3'>Obavezni podaci</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Sifra</mat-label>
+                    <input matInput required formControlName = 'code'>
+                    <mat-error *ngIf = 'productForm.controls["code"].hasError("required")'>Sifra je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Naziv</mat-label>
+                    <input matInput required formControlName = 'name'>
+                    <mat-error *ngIf = 'productForm.controls["name"].hasError("required")'>Naziv je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Jedinica mere</mat-label>
+                    <input matInput required formControlName = 'unitOfMeasure'>
+                    <mat-error *ngIf = 'productForm.controls["unitOfMeasure"].hasError("required")'>Jedinica mere je <strong>obavezno</strong></mat-error>
+                </mat-form-field>
+            </td>
+            <td *ngIf = 'user.inPDV'>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Poreska stopa</mat-label>
+                    <mat-select required formControlName = 'tax'>
+                        <mat-option value='20'>Opsta (20%)</mat-option>
+                        <mat-option value = '10'>Posebna (10%)</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf = 'productForm.controls["tax"].hasError("required")'>Poreska stopa je <strong>obavezno</strong> polje.</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf = '!user.isShop && !user.isBuyer'>
+                <mat-radio-group aria-label="Select an option" required formControlName = 'type'>
+                    <mat-radio-button value="food" [checked] = 'true'>Hrana</mat-radio-button>
+                    <mat-radio-button value="drink">Pice</mat-radio-button>
+                    <mat-radio-button value="material">Sirovina</mat-radio-button>
+                  </mat-radio-group>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class = 'mat-h3'>Dopunski podaci</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form enctype="multipart/form-data" name = 'fileinfo'>
+                    <ng-template matStepLabel>Slika artikla</ng-template>
+                        <input class="form-control fileinput" type="file" 
+                            (change)="onFileChanged($event)">
+                    </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Zemlja porekla</mat-label>
+                    <input matInput formControlName = 'countryOfOrigin'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Originalni naziv</mat-label>
+                    <input matInput formControlName = 'foreignName'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Bar kod broj</mat-label>
+                    <input matInput formControlName = 'barCode'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Proizvodjac</mat-label>
+                    <input matInput formControlName = 'producer'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Carinska tarifa</mat-label>
+                    <input matInput formControlName = 'customTariff'>
+                </mat-form-field>
+            </td>
+            <td>
+                  <mat-checkbox formControlName = 'ecoTax' value = 'true'>Eko taksa</mat-checkbox>
+                  <mat-checkbox formControlName = 'akciza' value = 'true'>Akcize</mat-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Minimalna zeljena kolicina</mat-label>
+                    <input matInput formControlName = 'minWantedAmount'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Maksimalna zeljena kolicina</mat-label>
+                    <input matInput formControlName = 'maxWantedAmount'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Opis</mat-label>
+                    <input matInput formControlName = 'description'>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field appearance='outline' color = 'accent'>
+                    <mat-label>Deklaracija</mat-label>
+                    <input matInput formControlName = 'declaration'>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                 <button mat-raised-button color = 'accent' (click) = 'addProduct()'>
+                     Dodaj
+                 </button>
+            </td> 
+         </tr>
+        <tr>
+            <td colspan="2">
+                <span>{{error}}</span>
+            </td>
+        </tr>
+    </table>
+
+    <table *ngIf = 'product != null'>
+        <tr>
+            <td colspan="6">
+                <div class = 'mat-h3'>Cene i stanje robe</div>
+            </td>
+        </tr>
+        <tr>
+            <th>Naziv magacina/objekat</th>
+            <th>Unesi artikal</th>
+        </tr>
+        <tr *ngFor = 'let s of stockrooms'>
+            <td>
+                {{s.name}}
+            </td>
+            <td>
+                <button mat-raised-button color="accent" (click) = 'addToStockroom(s)'>
+                    Unesi
+                </button>
+            </td>
+        </tr>
+        <tr *ngFor = 'let cr of cashRegisters'>
+            <td>
+                {{cr.city}},{{cr.streetAndNumber}}
+            </td>
+            <td>
+                <button mat-raised-button color="accent" (click) = 'addToObject(cr)'>
+                    Unesi
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button mat-raised-button color ='accent' (click) = "end()">Zavrsi</button>
+            </td>
+        </tr>
+    </table>
+</form>

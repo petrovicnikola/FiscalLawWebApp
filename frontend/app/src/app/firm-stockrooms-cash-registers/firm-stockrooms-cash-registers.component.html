@@ -1,0 +1,65 @@
+<body>
+    <div class ='mat-title'>Magacini</div>
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Obrisi</th>
+            <th>Izmeni</th>
+        </tr>
+        <tr *ngFor = 'let sr of stockrooms'>
+            <td>
+                {{sr.name}}
+            </td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = 'delete(sr)'>
+                    <span class = 'material-icons'>
+                        delete
+                    </span>
+                </button>
+            </td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = update(sr)>
+                    <span class = 'material-icons'>
+                        edit
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+    <br/>
+    <div class ='mat-title'>Kase</div>
+    <table>
+        <tr>
+            <th>Drzava</th>
+            <th>Grad</th>
+            <th>Ulica</th>
+            <th>Postanski broj</th>
+            <th>Tip kase</th>
+            <th>Obrisi</th>
+            <th>Izmeni</th>
+        </tr>
+        <tr *ngFor = 'let cr of cashRegisters'>
+            <td>{{cr.country}}</td>
+            <td>{{cr.city}}</td>
+            <td>{{cr.streetAndNumber}}</td>
+            <td>{{cr.zipCode}}</td>
+            <td>{{cr.cashRegisterType}}</td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = 'deleteCashRegister(cr)'>
+                    <span class = 'material-icons'>
+                        delete
+                    </span>
+                </button>
+            </td>
+            <td>
+                <button mat-raised-button color = 'accent' (click) = updateCashRegister(cr)>
+                    <span class = 'material-icons'>
+                        edit
+                    </span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
